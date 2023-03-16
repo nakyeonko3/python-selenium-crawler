@@ -55,7 +55,6 @@ while True:
         number_buttons = driver.find_elements(By.XPATH," /html/body/div[1]/div[2]/div[3]/form[2]/table[5]/tbody/tr[2]/td/table/tbody/tr/td[contains(@style,'padding-top:1px')]")
         number_buttons[current_number].click()
         create_data_table_list(driver=driver, data_table=data_table)
-         
     try:
         move_to_page_by_arrow_button(driver = driver)
     except:
