@@ -1,0 +1,1 @@
+<input name="occrFromDt" id="occrFromDtId" type="text" class="input hasDatepicker" value="2023-01-04" size="10" onfocus="onFocusFormatDate (this)" onblur="onBlurFormatDate(this)" alt="검색창"  title="검색창" />
