@@ -13,6 +13,7 @@ def checkIsLastPage(driver):
     return a == b 
 
 
+# 마지막 페이지 숫자를 알려주는 함수
 def showLastPageNumber(driver):
     pages = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[3]/form[2]/table[5]/tbody/tr[3]/td/table/tbody/tr/td") ##전체 : 829건(1쪽/83쪽)"
     match = re.findall(r"\d+(?=쪽)", pages.text) # 정규식을 이용해서 추출
@@ -27,9 +28,9 @@ def showCurentPageNumber(driver):
     a, b = match
     return b 
 
-# 테스트
-if __name__ == "__main__":
-    URL = 'https://home.kahis.go.kr/home/lkntscrinfo/selectLkntsOccrrncList.do'
-    driver = webdriver.Chrome(executable_path='chromedriver')
-    driver.get(url=URL)
-    print(showLastPageNumber(driver=driver))
+# # 테스트
+# if __name__ == "__main__":
+#     URL = 'https://home.kahis.go.kr/home/lkntscrinfo/selectLkntsOccrrncList.do'
+#     driver = webdriver.Chrome(executable_path='chromedriver')
+#     driver.get(url=URL)
+#     print(showLastPageNumber(driver=driver))
