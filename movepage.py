@@ -2,9 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 XPATH_NEXTPAGE_NUMBER_BUTTONS = " /html/body/div[1]/div[2]/div[3]/form[2]/table[5]/tbody/tr[2]/td/table/tbody/tr/td[contains(@style,'padding-top:1px')]"
-XPATH_NEXTPAGE_ARROW_BUTTON = (
-    " /html/body/div[1]/div[2]/div[3]/form[2]/table[5]/tbody/tr[2]/td/table/tbody/tr/td[23]"
-)
+XPATH_NEXTPAGE_ARROW_BUTTON = " /html/body/div[1]/div[2]/div[3]/form[2]/table[5]/tbody/tr[2]/td/table/tbody/tr/td[23]"
 
 
 def check_how_many_number_buttons(driver):
@@ -22,8 +20,6 @@ def move_to_page_by_number_button(driver):
         XPATH_NEXTPAGE_NUMBER_BUTTONS,
     )
     print(len(number_buttons))
-    # number_button = driver.find_element(By.XPATH," /html/body/div[1]/div[2]/div[3]/form[2]/table[5]/tbody/tr[2]/td/table/tbody/tr/td[23]")
-    # number_button.click()
 
 
 def move_to_page_by_arrow_button(driver):

@@ -3,12 +3,14 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 
-
+XPATH_PAGE_NUMBERS_ELEMENT = (
+    "/html/body/div[1]/div[2]/div[3]/form[2]/table[5]/tbody/tr[3]/td/table/tbody/tr/td"
+)
 # 마지막 페이지인지 알려주는 함수, 마지막 페이지라면 True를 출력함
 def checkIsLastPage(driver):
     pages = driver.find_element(
         By.XPATH,
-        "/html/body/div[1]/div[2]/div[3]/form[2]/table[5]/tbody/tr[3]/td/table/tbody/tr/td",
+        XPATH_PAGE_NUMBERS_ELEMENT,
     )  ##전체 : 829건(1쪽/83쪽)"
     match = re.findall(r"\d+(?=쪽)", pages.text)  # 정규식을 이용해서 추출
     a, b = match
@@ -20,7 +22,7 @@ def checkIsLastPage(driver):
 def showLastPageNumber(driver):
     pages = driver.find_element(
         By.XPATH,
-        "/html/body/div[1]/div[2]/div[3]/form[2]/table[5]/tbody/tr[3]/td/table/tbody/tr/td",
+        XPATH_PAGE_NUMBERS_ELEMENT,
     )  ##전체 : 829건(1쪽/83쪽)"
     match = re.findall(r"\d+(?=쪽)", pages.text)  # 정규식을 이용해서 추출
     a, b = match
@@ -31,7 +33,7 @@ def showLastPageNumber(driver):
 def showCurentPageNumber(driver):
     pages = driver.find_element(
         By.XPATH,
-        "/html/body/div[1]/div[2]/div[3]/form[2]/table[5]/tbody/tr[3]/td/table/tbody/tr/td",
+        XPATH_PAGE_NUMBERS_ELEMENT,
     )  ##전체 : 829건(1쪽/83쪽)"
     match = re.findall(r"\d+(?=쪽)", pages.text)  # 정규식을 이용해서 추출
     a, b = match
